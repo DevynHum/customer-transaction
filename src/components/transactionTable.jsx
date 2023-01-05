@@ -6,18 +6,20 @@ const TransactionTable = ({ headers, data }) => {
       <tbody>
         <tr>
           {headers.map((header) => (
-            <th key={header}>{header}</th>
+            <th key={header} data-testid="header-cell">
+              {header}
+            </th>
           ))}
         </tr>
         {data.map((item) => {
           const [name, firstMon, secondMon, thirdMon] = item;
           return (
             <tr key={name}>
-              <td>{name}</td>
-              <td>{firstMon}</td>
-              <td>{secondMon}</td>
-              <td>{thirdMon}</td>
-              <td>{firstMon + secondMon + thirdMon}</td>
+              <td data-testid="cell">{name}</td>
+              <td data-testid="cell">{firstMon}</td>
+              <td data-testid="cell">{secondMon}</td>
+              <td data-testid="cell">{thirdMon}</td>
+              <td data-testid="cell">{firstMon + secondMon + thirdMon}</td>
             </tr>
           );
         })}
